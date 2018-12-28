@@ -16,6 +16,7 @@ export default {
     height: 45px;
     text-align: left;
     border-bottom: solid 2px #b2b2b2;
+    margin-bottom: 20px;
   }
   h1 {
     display: inline;

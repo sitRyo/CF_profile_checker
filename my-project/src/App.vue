@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Header/>
-    <Checker/>
+    <div id="body-wrapper">
+      <Checker/>
+    </div>
   </div>
 </template>
 
@@ -18,8 +20,16 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  color: #2c3e50;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+  }
+
+  #body-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 </style>

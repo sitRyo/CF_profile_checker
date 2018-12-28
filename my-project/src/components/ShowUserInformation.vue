@@ -2,23 +2,19 @@
   <div>
     <div class="user-color-information">
       <template v-if="offset < 9">
-        <p class="rate-color" :style="{ color: titleColor }">{{title}}</p>
+        <div class="rate-color" :style="{ color: titleColor }">{{title}}</div>
         <div class="user-name">
-          <h2 :style="{ color: titleColor }">{{name}}</h2>
+          <div :style="{ color: titleColor }">{{name}}</div>
         </div>
       </template>
       <template v-else>
-        <p class="rate-color" :style="{ color: titleColor }">{{title}}</p>
-        <h2 class="user-name">
-          <span style="color: black">{{nameFirstLetter}}</span>
-          <span style="color: red">{{nameRest}}</span>
-        </h2>
+        <div class="rate-color" :style="{ color: titleColor }">{{title}}</div>
+        <div class="user-name" style="color: black;">{{nameFirstLetter}}<span style="color: red;">{{nameRest}}</span></div>
       </template>
     </div>
     <ul class="user-information">
       <li>country: {{country}}</li>
-      <li>rate: {{rate}}</li>
-      <ll>maxRate: {{maxRate}}</ll>
+      <li>rate: {{rate}} (maxRate: {{maxRate}})</li>
     </ul>
   </div>
 </template>
@@ -29,10 +25,10 @@ export default {
   props: ['name', 'country', 'rate', 'maxRate'],
   data () {
     return {
-      title: 'Newbie',
+      title: '',
       titleColor: '',
       offset: 0,
-      titleCandidate: ['Newbie', 'Pupil', 'Specialist', 'Expert', 'Candidate Master', 'International Master', 'Grandmaster', 'International GradMaster', 'Legendary Grandmaster'],
+      titleCandidate: ['Newbie', 'Pupil', 'Specialist', 'Expert', 'Candidate Master', 'Master', 'International Master', 'Grandmaster', 'International GradMaster', 'Legendary Grandmaster'],
       colorStyle: ['gray', 'green', '#03A89E', 'blue', '#a0a', '#0a', '#FF8C00', 'red', 'red', 'red'],
       nameFirstLetter: '',
       nameRest: ''
@@ -59,8 +55,6 @@ export default {
       this.titleColor = this.colorStyle[index]
       this.title = this.titleCandidate[index]
 
-      console.log(this.index)
-
       this.nameFirstLetter = this.name.substr(0, 1)
       this.nameRest = this.name.substr(1, len - 1)
     }
@@ -69,5 +63,19 @@ export default {
 </script>
 
 <style scoped>
-  
+  .rate-color {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .user-name {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .user-color-information {
+    border-bottom: solid 1px #b8b8b8;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
 </style>

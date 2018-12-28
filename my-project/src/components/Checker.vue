@@ -1,6 +1,7 @@
 <template>
   <main>
     <div class="name-field_wrapper">
+      <span class="name-field_codeforces-id">CodeforcesId:</span>
       <input v-model="name" placeholder="name">
       <button @click="getUserData">submit!</button>
     </div>
@@ -73,7 +74,7 @@ export default {
           this.ratingChangeLog = response.data.result
           this.loaded.graph = true
           this.generateGraph()
-          console.log(this.ratingChangeLog)
+          // console.log(this.ratingChangeLog)
         })
         .catch(function (error) {
           console.log(error)
@@ -86,16 +87,16 @@ export default {
       let d = []
 
       this.ratingChangeLog.forEach((el) => {
-        console.log(el.ratingUpdateTimeSeconds)
+        // console.log(el.ratingUpdateTimeSeconds)
         let date = new Date(el.ratingUpdateTimeSeconds)
         label.push(el.contestName)
         dateArr.push(date.getFullYear() + ' ' + date.getMonth() + ' ' + date.getDay())
         d.push(el.newRating)
       })
 
-      console.log(label)
-      console.log(d)
-      console.log(dateArr)
+      // console.log(label)
+      // console.log(d)
+      // console.log(dateArr)
 
       var ctx = document.getElementById('ChartLine').getContext('2d')
       // eslint-disable-next-line
@@ -146,5 +147,15 @@ export default {
   }
   a {
     color: #42b983;
+  }
+
+  .name-field_wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .name-field_codeforces-id {
+    font-weight: bolder;
+
   }
 </style>
