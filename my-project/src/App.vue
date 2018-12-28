@@ -26,6 +26,7 @@ export default {
   }
 
   #body-wrapper {
+    box-shadow: 0px 0px 10px 5px #888888;
     margin-right: auto;
     margin-left: auto;
     max-width: 1200px;
