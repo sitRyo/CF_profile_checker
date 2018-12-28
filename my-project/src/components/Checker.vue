@@ -6,6 +6,7 @@
     </div>
     <div class="user-information-field_wrapper">
       <UserInformation
+        :name="name"
         :country="userInformation.country"
         :rate="userInformation.rating"
         :maxRate="userInformation.maxRating"
@@ -131,7 +132,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h1, h2 {
     font-weight: normal;
