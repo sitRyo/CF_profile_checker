@@ -27,7 +27,7 @@ export default {
   name: 'Checker',
   data () {
     return {
-      fixedUrl: 'http://codeforces.com/api/',
+      fixedUrl: 'https://codeforces.com/api/',
       loaded: {
         user: false,
         graph: false
