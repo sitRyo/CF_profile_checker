@@ -20,7 +20,7 @@ export default {
   }
   h1 {
     display: inline;
-    background-image: url("../assets/codeforces_logo.png");
+    background-image: url("@/assets/codeforces_logo.png");
     background-size: 40px 40px;
     background-repeat: no-repeat;
     padding: 0px 0px 0px 50px;
