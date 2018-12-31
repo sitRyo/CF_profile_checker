@@ -1,6 +1,7 @@
 <template>
   <header>
-    <h1>Codeforces Status Viewer</h1>
+    <img src="../assets/codeforces_logo.png">
+    <div class="header-title">Codeforces Status Viewer</div>
   </header>
 </template>
 
@@ -18,12 +19,16 @@ export default {
     border-bottom: solid 2px #b2b2b2;
     margin-bottom: 20px;
   }
-  h1 {
-    display: inline;
-    background-image: url("../assets/codeforces_logo.png");
-    background-size: 40px 40px;
-    background-repeat: no-repeat;
-    padding: 0px 0px 0px 50px;
-    margin-top: 5px;
+  img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    display: inline-block;
+  }
+  .header-title {
+    float: left;
+    padding-left: 10px;
+    padding-top: 7px;
+    font-size: 25px;
   }
 </style>
