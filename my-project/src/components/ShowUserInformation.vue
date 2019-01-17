@@ -40,6 +40,7 @@ export default {
       let index
       const len = this.name.length
 
+      // レート区分を決定
       if (rate < 1200) index = 0
       else if (rate >= 1200 && rate < 1400) index = 1
       else if (rate >= 1400 && rate < 1600) index = 2

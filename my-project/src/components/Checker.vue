@@ -27,6 +27,7 @@ export default {
   name: 'Checker',
   data () {
     return {
+      // codeforces API
       fixedUrl: 'https://codeforces.com/api/',
       loaded: {
         user: false,
@@ -35,6 +36,7 @@ export default {
       /* 個人情報系 */
       name: '',
 
+      /* APIから受け取った情報を入れる */
       ratingChangeLog: [],
       userInformation: {
         country: 'nil',
@@ -45,17 +47,20 @@ export default {
   },
   methods: {
 
+    // userデータを取得する
     getUserData: function () {
       const infoUrl = 'user.info?handles='
       const ratedUrl = 'user.rating?handle='
 
       const requestUrl = this.fixedUrl + infoUrl + this.name
+      // APIを叩く
       axios
         .get(requestUrl)
         .then(response => {
           if (response.data.status !== 'OK') {
             this.errorHandler()
           } else {
+            // データを入れる
             this.userInformation.country = response.data.result[0].country
             this.userInformation.rating = response.data.result[0].rating
             this.userInformation.maxRating = response.data.result[0].maxRating
@@ -81,6 +86,7 @@ export default {
         })
     },
 
+    // chartJSを使用してグラフを作る
     generateGraph: function () {
       let label = []
       let dateArr = []
@@ -94,10 +100,7 @@ export default {
         d.push(el.newRating)
       })
 
-      // console.log(label)
-      // console.log(d)
-      // console.log(dateArr)
-
+      // ChartJS部分
       var ctx = document.getElementById('ChartLine').getContext('2d')
       // eslint-disable-next-line
       var chartLine = new Chart(ctx, {
